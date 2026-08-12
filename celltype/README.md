@@ -40,7 +40,7 @@ CONDA_OVERRIDE_CUDA="11.1" mamba install -c conda-forge xgboost=1.6.2=cuda111* c
 
 ## Data structure
 
-The directory is organized as follows (generated SLURM logs and `.DS_Store` files are omitted):
+The directory is organized as follows (generated SLURM log files are omitted):
 
 ```text
 celltype/

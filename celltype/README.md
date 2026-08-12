@@ -85,4 +85,4 @@ celltype/
 ## Data Source
 
 Details on the **scTab** datasets and file formats are available at:  
-https://github.com/theislab/scTab. See `scTab_files` for the detail: [![Docs](https://img.shields.io/badge/Docs-Cell%20Type-blue)](https://github.com/GoyalLab/KeepingScore/blob/main/celltype/scTab_files/README.md). 
+https://github.com/theislab/scTab. See `scTab_files` for the detail. 

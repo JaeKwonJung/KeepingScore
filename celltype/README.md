@@ -73,7 +73,7 @@ celltype/
 └── README.md
 ```
 
-- `embeddings/embeddings_computation`: Train, validation, and test scripts and launchers for extracting **scTab embeddings** from the feature transformer. Embedding extraction requires **very high memory (≥1,000 GB RAM)** and may take **multiple days**.
+- `embeddings/embeddings_computation`: Train, validation, and test scripts and launchers for extracting **scTab embeddings** from the feature transformer. Embedding extraction requires **very high memory (≥1,000 GB RAM)** and may take **multiple days**. The computed embeddings used for the manuscript can be found at: https://figshare.com/articles/dataset/scTab_embedding_for_Keeping_SCORE_cell_type_analysis/33235659?file=67490319. 
 - `diffusion_model`: Conditional diffusion-model training code and launcher used by **Keeping SCORE**.
 - `timestep_analysis/variance_based_sampling`: Timestep-subsampling scripts and notebook for the analysis illustrated in Figure 4C.
 - `benchmark/models`: Training and evaluation code for Keeping SCORE (path 4 and path 256), MLP, TabNet/scTab, XGBoost, linear, and logistic-regression models. `benchmark/checkpoints` stores model outputs, and `benchmark/benchmark_plot.ipynb` compares benchmark results.

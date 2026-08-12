@@ -1,5 +1,8 @@
-celltype/scTab_files/
+celltype/scTab_files/merlin_cxg_2023_05_15_sf-log1p/
+celltype/scTab_files/scTab-checkpoints/
+celltype/scTab_files/scTab-devel/
 celltype/embeddings/adatas/
 celltype/embeddings/*.pt
 celltype/embeddings/embeddings_computation/*.err
 celltype/embeddings/embeddings_computation/*.out
+/perturb-seq

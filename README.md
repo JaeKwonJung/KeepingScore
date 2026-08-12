@@ -100,10 +100,10 @@ git lfs pull --include="path/to/needed/files"
 2. **CIFAR10**  
    - `CIFAR10.ipynb`: data loading, joint VAE+diffusion training, classification, analysis (Fig. 3)
 
-3. **Cell Type Analysis (`SCTAB_FINAL`)**  
+3. **Cell Type Analysis (`celltype`)**  
    Benchmarking scripts for cell-type classification (Fig. 4).  
    **Models:** Linear, Logistic Regression, MLP, XGBoost, scTab  
-   [![Docs](https://img.shields.io/badge/Docs-Cell%20Type-blue)](https://github.com/GoyalLab/KeepingScore/blob/main/SCTAB_FINAL/README.md)
+   [![Docs](https://img.shields.io/badge/Docs-Cell%20Type-blue)](https://github.com/GoyalLab/KeepingScore/blob/main/celltype/README.md)
 
 4. **Genetic Perturbation Analysis (`perturb-seq`)**  
    Benchmarking scripts for Perturb-seq analysis (Fig. 4).  

@@ -16,7 +16,7 @@ module load mamba
 mkdir -p logs
 
 # Run Python script
-/projects/b1042/GoyalLab/jaekj/python/scTAB_new/bin/python sampling.py \
+/projects/b1042/GoyalLab/jaekj/envs/KS_celltype/bin/python sampling.py \
     --data_path ../embeddings \
     --save_path ./sample_mean/mean.npz \
     --mapping_path ../../scTab_files/merlin_cxg_2023_05_15_sf-log1p/categorical_lookup/cell_type.parquet \

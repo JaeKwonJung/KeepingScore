@@ -1,0 +1,5 @@
+celltype/scTab_files/
+celltype/embeddings/adatas/
+celltype/embeddings/*.pt
+celltype/embeddings/embeddings_computation/*.err
+celltype/embeddings/embeddings_computation/*.out

@@ -1,0 +1,1 @@
+The computed embeddings used for the manuscript can be found at: https://figshare.com/articles/dataset/scTab_embedding_for_Keeping_SCORE_cell_type_analysis/33235659?file=67490319. 

@@ -21,25 +21,35 @@ training classifiers on precomputed embeddings.
 
 ## Quick setup
 
-From the repository root, run:
+The Merlin dataset and pretrained checkpoints **must be downloaded manually**
+from the links below (for example, with a local web browser) and then uploaded
+to `KeepingScore/celltype/scTab_files/`. Do not expect the `curl` commands to
+work from the compute environment.
+
+- [Download the Merlin dataset (~164 GB)](https://pklab.med.harvard.edu/felix/data/merlin_cxg_2023_05_15_sf-log1p.tar.gz)
+- [Download the pretrained scTab checkpoints (~8.1 GB)](https://pklab.med.harvard.edu/felix/data/scTab-checkpoints.tar.gz)
+
+After uploading both archives, their paths should be:
+
+```text
+KeepingScore/celltype/scTab_files/merlin_cxg_2023_05_15_sf-log1p.tar.gz
+KeepingScore/celltype/scTab_files/scTab-checkpoints.tar.gz
+```
+
+Then, from the `KeepingScore` repository root, extract them and clone scTab:
 
 ```bash
 cd celltype/scTab_files
 
-# 1. Download and extract the Merlin dataset (~164 GB).
-curl -L -C - -O https://pklab.med.harvard.edu/felix/data/merlin_cxg_2023_05_15_sf-log1p.tar.gz
+# 1. Extract the manually downloaded and uploaded Merlin dataset.
 tar -xzf merlin_cxg_2023_05_15_sf-log1p.tar.gz
 
-# 2. Download and extract the pretrained scTab checkpoints.
-curl -L -O https://pklab.med.harvard.edu/felix/data/scTab-checkpoints.tar.gz
+# 2. Extract the manually downloaded and uploaded pretrained checkpoints.
 tar -xzf scTab-checkpoints.tar.gz
 
 # 3. Clone the upstream scTab source into the name expected by this project.
 git clone --branch devel --single-branch https://github.com/theislab/scTab.git scTab-devel
 ```
-
-If you already downloaded the archives elsewhere, copy them into this directory
-before running the corresponding `tar` commands.
 
 ## Expected layout
 

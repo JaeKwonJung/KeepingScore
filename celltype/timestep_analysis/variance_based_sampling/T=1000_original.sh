@@ -18,7 +18,7 @@ export TF_ENABLE_ONEDNN_OPTS=0
 # Run script
 /projects/b1042/GoyalLab/jaekj/envs/KS_celltype/bin/python -u original.py \
     --data_path "../../embedding" \
-    --checkpoint "../../diffusion_model/tb_logs/Vanilla Diffusion Model/version_0/checkpoints/epoch=285-step=2128412.ckpt" \
+    --checkpoint "../../diffusion_model/tb_logs/DiffusionModel/version_0/checkpoints/epoch=285-step=2128412.ckpt" \
     --T_train 1000 \
     --T 1000 \
     --n_paths 256 \

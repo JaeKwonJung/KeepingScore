@@ -6,9 +6,9 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --time=48:00:00
 #SBATCH --mem=64G
-#SBATCH --job-name=mlp-gpu
-#SBATCH --output=logs/mlp/slurm-%j.out
-#SBATCH --error=logs/mlp/slurm-%j.err
+#SBATCH --job-name=scTab
+#SBATCH --output=logs/scTab/slurm-%j.out
+#SBATCH --error=logs/scTab/slurm-%j.err
 
 module purge all
 module load mamba
@@ -16,4 +16,4 @@ module load mamba
 export TF_ENABLE_ONEDNN_OPTS=0
 
 # Run script
-/projects/b1042/GoyalLab/jaekj/envs/KS_celltype/bin/python -u model_mlp.py --run_id 1 --seed 1
+/projects/b1042/GoyalLab/jaekj/envs/KS_celltype/bin/python -u model_sctab.py --run_id 1 --seed 1

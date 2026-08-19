@@ -22,7 +22,7 @@ import diffusion_model
 # ----------------------------
 parser = argparse.ArgumentParser(description="Softmax posterior inference with vanilla diffusion model")
 parser.add_argument("--data_path", type=str, required=True)
-parser.add_argument("--checkpoint", type=str, default='../diffusion_model/diffusion_module_state.pt')
+parser.add_argument("--checkpoint", type=str, default='../diffusion_model/tb_logs/DiffusionModel/version_0/checkpoints/epoch=285-step=2128412.ckpt')
 parser.add_argument("--n_paths", type=int, default=256, help="Number of Monte Carlo paths per observation")
 parser.add_argument("--T", type=int, default=1000, help="Number of diffusion steps")
 parser.add_argument("--beta_min", type=float, default=1e-5)
@@ -70,7 +70,7 @@ logger.info(f"Number of unique classes: {num_classes}, training samples: {X_trai
 # Load trained model
 # ----------------------------
 logger.info("Loading trained vanilla diffusion model...")
-betas = diffusion_model1.sigmoid_schedule(
+betas = diffusion_model.sigmoid_schedule(
     T=args.T,
     beta_min=args.beta_min,
     beta_max=args.beta_max,
@@ -78,7 +78,7 @@ betas = diffusion_model1.sigmoid_schedule(
     high=args.high
 )
 
-diff_model = diffusion_model1.ConditionalDenoiser(
+diff_model = diffusion_model.ConditionalDenoiser(
     T=args.T,
     num_classes=num_classes,
     latent_dim=X_train_emb.shape[1],
@@ -88,7 +88,7 @@ diff_model = diffusion_model1.ConditionalDenoiser(
 )
 diff_model.register_buffer("betas", betas)
 
-diffusion_module = diffusion_model1.DiffusionModule(
+diffusion_module = diffusion_model.DiffusionModule(
     model=diff_model,
     T=args.T,
     betas=betas,

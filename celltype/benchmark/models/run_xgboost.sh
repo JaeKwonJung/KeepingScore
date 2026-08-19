@@ -4,11 +4,11 @@
 #SBATCH --gres=gpu:1
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --time=48:00:00
+#SBATCH --time=5:00:00
 #SBATCH --mem=64G
-#SBATCH --job-name=mlp-gpu
-#SBATCH --output=logs/mlp/slurm-%j.out
-#SBATCH --error=logs/mlp/slurm-%j.err
+#SBATCH --job-name=XGBoost-gpu
+#SBATCH --output=logs/xgb/slurm-%j.out
+#SBATCH --error=logs/xgb/slurm-%j.err
 
 module purge all
 module load mamba
@@ -16,4 +16,4 @@ module load mamba
 export TF_ENABLE_ONEDNN_OPTS=0
 
 # Run script
-/projects/b1042/GoyalLab/jaekj/envs/KS_celltype/bin/python -u model_mlp.py --run_id 1 --seed 1
+/projects/b1042/GoyalLab/jaekj/envs/KS_celltype/bin/python -u model_xgboost.py --run_id 1

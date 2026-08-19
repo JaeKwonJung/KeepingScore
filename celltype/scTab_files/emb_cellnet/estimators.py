@@ -8,7 +8,8 @@ import torch
 from lightning.pytorch.tuner.tuning import Tuner
 
 import sys
-sys.path.append("../scTab-devel")
+sys.path.insert(0, "../../scTab_files")
+sys.path.insert(0, "../../scTab_files/scTab-devel")
 from cellnet.datamodules import MerlinDataModule
 from emb_cellnet.models import TabnetClassifier, LinearClassifier, MLPClassifier
 

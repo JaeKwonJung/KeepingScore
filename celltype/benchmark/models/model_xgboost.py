@@ -39,7 +39,7 @@ num_classes = len(unique_test_labels)
 label_ids = torch.arange(num_classes, device=device)
 
 print("[Info] Class weights loading...")
-DATA_PATH = "../../merlin_cxg_2023_05_15_sf-log1p"
+DATA_PATH = "../../scTab_files/merlin_cxg_2023_05_15_sf-log1p"
 class_weights = np.load(join(DATA_PATH, 'class_weights.npy'))
 class_weights_dict = {i: weight for i, weight in enumerate(class_weights)}
 weights = np.array([class_weights_dict[label] for label in y_train])
@@ -63,7 +63,8 @@ clf.fit(
     eval_set=[(X_val, y_val)]
 )
 
-SAVE_PATH = f"../../checkpoints/xgboost/run{args.run_id}"
+MODEL = 'xgboost'
+SAVE_PATH = os.path.join('..', 'checkpoints', MODEL, f'run_{args.run_id}')
 os.makedirs(SAVE_PATH, exist_ok=True)
 
 # --- Save model ---

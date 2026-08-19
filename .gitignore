@@ -5,4 +5,12 @@ celltype/embeddings/adatas/
 celltype/embeddings/*.pt
 celltype/embeddings/embeddings_computation/*.err
 celltype/embeddings/embeddings_computation/*.out
+celltype/diffusion_model/logs
+celltype/diffusion_model/state
+celltype/diffusion_model/tb_logs
+celltype/diffusion_model/umap_plots
+celltype/benchmark/checkpoints
+celltype/benchmark/models/logs
+celltype/benchmark/models/*.png
 /perturb-seq
+/perturb-seq_old

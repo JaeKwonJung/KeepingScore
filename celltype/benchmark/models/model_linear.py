@@ -13,7 +13,8 @@ from lightning.pytorch.callbacks import EarlyStopping
 
 torch.set_float32_matmul_precision('high')
 
-sys.path.append("../../scTab_files")
+sys.path.insert(0, "../../scTab_files")
+sys.path.insert(0, "../../scTab_files/scTab-devel")
 from emb_cellnet.estimators import EstimatorCellTypeClassifier
 
 
@@ -62,11 +63,10 @@ class EmbeddingDataModule:
 
 # config parameters
 MODEL = 'linear'
-CHECKPOINT_PATH = os.path.join(f'../checkpoints/linear/{args.run_id}', MODEL)
-LOGS_PATH = os.path.join(f'../logs/linear/{args.run_id}', MODEL)
+CHECKPOINT_PATH = os.path.join('..', 'checkpoints', MODEL, f'run_{args.run_id}')
 
 print("[Info] Load Linear model ...")
-DATA_PATH = "../../merlin_cxg_2023_05_15_sf-log1p"
+DATA_PATH = "../../scTab_files/merlin_cxg_2023_05_15_sf-log1p"
 seed_everything(args.seed)
 estim = EstimatorCellTypeClassifier(DATA_PATH, embedding=True)
 estim.datamodule = EmbeddingDataModule(train_emb, val_emb, test_emb, batch_size=2048)
@@ -74,12 +74,11 @@ estim.datamodule = EmbeddingDataModule(train_emb, val_emb, test_emb, batch_size=
 estim.init_trainer(
     trainer_kwargs={
         'max_epochs': 12,
-        'default_root_dir': CHECKPOINT_PATH,
         'accelerator': 'gpu',
         'devices': 1,
         'num_sanity_val_steps': 0,
         'check_val_every_n_epoch': 1,
-        'logger': [TensorBoardLogger(LOGS_PATH, name='default')],
+        'logger': [TensorBoardLogger(CHECKPOINT_PATH, name='default')],
         'log_every_n_steps': 100,
         'detect_anomaly': False,
         'enable_progress_bar': True,
@@ -138,12 +137,11 @@ plt.close()
 estim.init_trainer(
     trainer_kwargs={
         'max_epochs': 12,  # Reapply your intended value
-        'default_root_dir': CHECKPOINT_PATH,
         'accelerator': 'gpu',
         'devices': 1,
         'num_sanity_val_steps': 0,
         'check_val_every_n_epoch': 1,
-        'logger': [TensorBoardLogger(LOGS_PATH, name='default')],
+        'logger': [TensorBoardLogger(CHECKPOINT_PATH, name='default')],
         'log_every_n_steps': 100,
         'detect_anomaly': False,
         'enable_progress_bar': True,

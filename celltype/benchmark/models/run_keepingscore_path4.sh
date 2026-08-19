@@ -18,9 +18,9 @@ export TF_ENABLE_ONEDNN_OPTS=0
 # Run script
 /projects/b1042/GoyalLab/jaekj/envs/KS_celltype/bin/python -u model_keepingscore_path4.py \
     --data_path "../../embeddings" \
-    --checkpoint "../../diffusion_model/tb_logs/Vanilla Diffusion Model/version_0/checkpoints/epoch=285-step=2128412.ckpt" \
+    --checkpoint "../../diffusion_model/tb_logs/DiffusionModel/version_0/checkpoints/epoch=170-step=1272582.ckpt" \
     --T 1000 \
     --n_paths 4 \
     --sample_size 300 \
-    --save_dir "./KS_300_T_1000_Path_4" \
+    --save_dir "../checkpoints/KS_300_T_1000_Path_4" \
     

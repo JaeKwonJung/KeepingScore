@@ -1,7 +1,8 @@
 #!/bin/bash
 #SBATCH --account=b1042
 #SBATCH --partition=genomics-gpu
-#SBATCH --gres=gpu:1
+#SBATCH --gres=gpu:a100:1
+#SBATCH --constraint=quest12
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --time=5:00:00
